@@ -5,7 +5,7 @@ title: Go Inward Out — Legal
 
 # Go Inward Out
 
-Inner experience intelligence platform for iOS.
+Inner experience intelligence platform — iOS, Android, and Web.
 
 ## Legal
 - [Privacy Policy](./PrivacyPolicy.html)
@@ -17,4 +17,4 @@ Inner experience intelligence platform for iOS.
 ---
 
 **App:** [App Store listing (coming soon)](#)
-**Support:** jakegarrett@gmail.com
+**Support:** goinwardout@gmail.com
