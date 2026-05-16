@@ -7,155 +7,108 @@ title: Privacy Policy
 
 **Last updated:** May 12, 2026
 
-Go Inward Out is a private journal for inner experiences — dreams, meditations, mystical experiences, and the like — augmented with AI-assisted reflection. This policy describes what data the app collects, how it's used, and what control you have over it.
+Go Inward Out is a private journal for inner experiences — dreams, meditations, mystical experiences, somatic states, ordinary days — augmented with AI-assisted reflection through a feature we call **the Lantern**. This policy describes what data we collect, how it's used, and what control you have over it.
 
-The short version, in plain language:
+## In plain language
 
-- **Your captures stay yours.** Journal entries, voice recordings, images, and reflections are end-to-end encrypted before they leave your device.
-- **The server cannot read your content.** Even our hosting provider (Supabase) sees only ciphertext for your private records.
-- **AI processing is initiated by you.** When you tap "Cast a Reading" or similar, the relevant content is sent to Anthropic's Claude API. Anthropic does not use your content to train future models per their API terms.
-- **No third-party tracking.** No analytics SDKs, no advertising IDs, no user fingerprinting. The app does not track you across apps or websites.
-- **You can export or delete everything at any time.**
+- Your captured experiences, voice recordings, transcripts, readings, and reflections are encrypted in transit (TLS) and at rest in our database (Supabase server-side AES-256 encryption).
+- We don't read your content. Our systems and our team are designed to keep your data accessible only to you and to the AI services you direct.
+- When you tap "Cast a Reading," the relevant content is sent to Anthropic's Claude API to compose a response. Anthropic does not use your content to train future models per their Commercial Terms.
+- We use **no** analytics SDKs, **no** advertising IDs, **no** fingerprinting, **no** cross-app or cross-site tracking.
+- Sign in (Apple or email magic link) and your data is restored on any device.
+- You can export your data or delete your account at any time.
 
----
-
-## 1. What data we collect
+## What we collect
 
 ### Data you create
-- **Captured experiences** — text, voice transcripts, optional images. Stored end-to-end encrypted.
-- **Reflections and recasts** — your responses to the Lantern's readings. Stored end-to-end encrypted.
-- **Profile information** — name, optional birth data (for astrological context), preferences. Stored end-to-end encrypted.
-- **Audio recordings** — original voice files. Stored on-device; sync optional, end-to-end encrypted.
 
-### Data the app needs to function
-- **Account identifier** — when you sign in (Apple, Google, or email), the provider returns a stable user ID. We use this to retrieve your encrypted records on a new device.
-- **Session token (JWT)** — issued by Supabase Auth, expires periodically, used for authentication.
-- **Sync metadata** — timestamps and identifiers of your records (not their contents) so devices can stay synchronized.
-- **Device identifier** — a randomly-generated UUID stored on your device, used to disambiguate sync between multiple devices.
+- **Captured experiences** — title, body text, voice transcripts, optional images, your tagging (type, emotions, felt significance, intention).
+- **Reflections** and your replies to the Lantern's readings.
+- **Profile info** — optional display name, optional birth data, preferences.
+- **Audio recordings** — when you capture by voice; transcripts are derived from these on your device.
 
-### Data the app does NOT collect
-- No advertising identifiers (IDFA, GAID, etc.)
-- No location data (your birth location, if entered, is treated as profile data and end-to-end encrypted)
-- No contacts, calendar, or social-graph data
-- No health or biometric data (Face ID happens entirely on-device — Apple does not share the biometric template with the app)
-- No browsing history or third-party cookies
-- No microphone access without explicit user action (you press to record)
+### Data we need to operate
 
----
+- **Account identifier** — a stable user ID issued by Supabase. When you sign in with Apple or email, the resulting identity is linked to this ID so your data restores on any device you sign in on.
+- **Session tokens** — Supabase issues short-lived JWTs for authenticated requests.
+- **Sync metadata** — record IDs, timestamps, deletion markers used to keep your devices in sync.
+- **Device identifier** — a random UUID generated locally per app install. Used only for sync envelope identification.
 
-## 2. How AI processing works
+### Data we do **not** collect
 
-When you request AI assistance (a reading, a synthesis, voice cleanup, etc.), the following occurs:
+- Advertising identifiers (IDFA, GAID, etc.)
+- Location, contacts, calendar, health data, browsing history, search history outside the app
+- Microphone access only when you press to record. Camera and photo library are not currently used by the app.
 
-1. The relevant content (the experience you wrote, plus context the Lantern needs) is decrypted on your device.
-2. It is sent over HTTPS to a Supabase Edge Function we operate.
-3. The Edge Function relays it to Anthropic's Claude API (`api.anthropic.com`).
-4. Claude returns a response — a reading, a structured analysis, or cleaned text.
-5. The response is encrypted and stored back in your records.
-6. The plaintext content is **not** retained on the server beyond the lifetime of the request.
+## How AI works
 
-Anthropic's API terms (as of this policy's publication) state that prompts and responses are not used to train future models. We retain no plaintext content beyond the request itself; only the structured response is persisted, end-to-end encrypted.
+When you request AI assistance (cast a reading, generate synthesis, clean up a voice transcript), the relevant content is sent over HTTPS to a Supabase Edge Function we operate. That function relays the request to Anthropic's Claude API and returns the response. The response is stored back in your records.
 
-You can disable AI processing entirely from Settings. With AI disabled, Go Inward Out is a pure private journal — no API calls are made.
+- Anthropic's Commercial Terms prohibit training on your data.
+- Anthropic retains your prompt and response for up to 30 days for safety review, then deletes them.
+- You can disable AI entirely from **Settings → AI**. With AI disabled, Go Inward Out functions as a pure private journal — no requests leave the app.
 
----
+## What our infrastructure sees
 
-## 3. End-to-end encryption (E2EE)
+- **Supabase** (our hosting + database provider, US-based): your records are encrypted at rest using AES-256 with keys managed by Supabase. Supabase's technical staff have administrative access to our database but contractually agree to access user data only for support tickets you've initiated. We have not configured any database extension or function that would expose your data beyond your own authenticated requests.
+- **Anthropic**: receives your prompt (the relevant entry text + context blocks) and returns a response. Bound by Anthropic's Commercial Terms — no training, 30-day retention, then deleted.
+- **Apple / email providers**: when you sign in, the provider issues a token bound to your identity. We receive the resulting auth identifier (e.g. the Apple user ID) and your email if you provided it.
 
-When you create an account, your device generates a User Master Key (UMK). This key never leaves your device unencrypted.
+We do **not** share data with advertisers, analytics vendors, data brokers, or any party that profiles users for behavioral targeting.
 
-- Every private record (entry, reflection, recast, profile, etc.) is encrypted with a per-record key generated at write time.
-- The per-record key is encrypted ("wrapped") under your UMK before being uploaded.
-- The UMK travels between your devices via a one-time pairing code or an optional passphrase-encrypted backup. We never see the plaintext UMK.
-- If you choose **not** to back up your UMK and you lose your only device, your records become unrecoverable — by design. This is the privacy tradeoff. We surface this clearly during onboarding.
+## Where your data lives
 
----
+All data is processed in the United States by Supabase Inc. Voice transcripts, reading text, and AI requests transit to Anthropic's US-based infrastructure under their Commercial Terms.
 
-## 4. What the server can see
+If you are an EU/UK resident, you have the rights described in **Your rights** below regarding international transfer.
 
-The server sees:
-- Your account ID and authentication tokens
-- Encrypted blobs (which it cannot decrypt)
-- Timestamps and record identifiers (`created_at`, `updated_at`, etc.) used for sync ordering
-- Soft-delete flags
-
-The server cannot see:
-- The content of any private record
-- Your name, journal text, voice transcripts, images, audio
-- Patterns in your inner life
-- Anything that would let it profile you, target you, or distinguish you from any other E2EE user
-
----
-
-## 5. Data sharing with third parties
-
-We share data with these third parties — and only these:
-
-- **Supabase** (our hosting + database provider): receives encrypted blobs and authentication tokens. Cannot decrypt content.
-- **Anthropic** (Claude API): receives the contents of an AI request (decrypted on your device) only when you trigger one. Bound by their Commercial Terms — no training on user data.
-- **Apple / Google** (auth providers): when you sign in, their token issuance is between you and them; we receive only the resulting auth identifier.
-
-We do not share data with:
-- Advertisers
-- Analytics vendors
-- Data brokers
-- Any third party who profiles users for behavioral targeting
-
----
-
-## 6. Data retention and deletion
+## Data retention and deletion
 
 - Records you create persist as long as your account exists.
-- When you delete a record, it is soft-deleted immediately and hard-deleted from our servers within 30 days.
-- When you delete your account (Settings → Delete Account), all server-side records are scheduled for hard deletion within 30 days. Audio blobs and images are removed with the same schedule.
-- You can export your full data set as a `.zip` archive at any time (Settings → Export). The archive includes decrypted content and your UMK in plain text — keep it safely.
+- When you delete a record, it is moved to **Trash** for 30 days, then permanently purged on next sync.
+- To delete your account: **Settings → Account → Delete Account**. Server-side data is purged within 30 days. Email `goinwardout@gmail.com` if you need confirmation or a faster purge.
+- Export your data anytime: **Settings → Data → Export**.
 
----
+## Your rights
 
-## 7. Your rights
+Regardless of where you live:
 
-Depending on where you live, you may have rights under GDPR (EU/UK), CCPA (California), or similar regimes:
+- **Access** — Export your data via Settings → Data → Export.
+- **Correction** — Edit records in the app.
+- **Deletion** — Delete records or your full account from Settings.
+- **Portability** — The export is standard JSON; take it elsewhere.
+- **Objection** — Email `goinwardout@gmail.com` with concerns or requests.
 
-- **Access:** request a copy of your data — use Settings → Export to do this directly without contacting us.
-- **Correction:** edit any record from within the app.
-- **Deletion:** delete records or your full account from Settings.
-- **Portability:** the export `.zip` is a standard format you can re-import or take elsewhere.
-- **Objection / restriction:** contact us using the email below.
+EU/UK/California residents may have additional rights under GDPR / UK GDPR / CCPA. We honor those requests at the email above.
 
-We don't sell or share data for cross-context behavioral advertising — nothing to opt out of.
+## Children
 
----
+Go Inward Out is not directed at users under 13. We do not knowingly collect data from users under 13.
 
-## 8. Children
+## Security
 
-Go Inward Out is not intended for users under 13. If you believe a child has used the app, contact us and we will delete their account and any associated data.
+- TLS 1.2+ for all network traffic
+- AES-256 encryption at rest (Supabase-managed)
+- Per-user Row-Level Security on every table — a leaked token from one user cannot read another user's records
+- No passwords stored. Authentication via Apple Sign-In or email magic link.
+- Optional Face ID gate per entry (Settings → Privacy on each entry) and optional App Lock for the entire app (Settings → Security)
+- Audit log of AI transmissions visible in Settings → Privacy → Transmissions
 
----
+## What this policy doesn't promise
 
-## 9. Security
+We want to be honest about the scope of our commitments:
 
-- E2EE for all private content (AES-256-GCM)
-- TLS 1.3 for all network traffic
-- Supabase Row-Level Security (RLS) so a leaked token from one user cannot read another user's records
-- No passwords stored — auth uses Apple, Google, or magic-link email; no password to leak
-- Audit logs of API transmissions visible from Settings → Privacy
+- We don't claim end-to-end encryption. Your data is encrypted in transit and at rest, but our hosting provider's privileged staff have theoretical technical access — the same posture as nearly every cloud service you use.
+- We don't claim zero-trust against Anthropic. When you cast a reading, Anthropic temporarily receives your prompt content; their Commercial Terms govern what they do with it.
+- We don't claim immunity from legal compulsion. If lawfully compelled by a court order, we may have to disclose data we hold.
 
-If you believe you've found a vulnerability, please email the contact below.
+What we do promise: we won't read your data manually for any reason that isn't a support ticket you've initiated. We won't train AI models on your data. We won't sell it. We won't share it with advertisers or analytics vendors.
 
----
+## Changes
 
-## 10. Changes to this policy
+We'll surface material changes in-app. The "Last updated" date at the top changes when we revise this policy.
 
-If we change this policy materially, we'll surface a notice in the app on next launch. The "Last updated" date at the top will change accordingly. Substantive changes will be summarized in the in-app notice.
+## Contact
 
----
-
-## 11. Contact
-
-Email: **goinwardout@gmail.com** (subject line "Privacy")
-
-GitHub issues: <https://github.com/utahbiker/go-inward-out/issues>
-
----
-
-*Go Inward Out is built by an independent developer. The app is not affiliated with Anthropic, Apple, or any of the named third parties beyond the contractual relationships described above.*
+- **Email:** goinwardout@gmail.com
+- **GitHub:** https://github.com/utahbiker/go-inward-out/issues (for public-facing technical questions)
