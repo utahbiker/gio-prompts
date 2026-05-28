@@ -5,7 +5,7 @@ title: Privacy Policy
 
 # Privacy Policy — Go Inward Out
 
-**Last updated:** May 12, 2026
+**Last updated:** May 28, 2026
 
 Go Inward Out is a private journal for inner experiences — dreams, meditations, mystical experiences, somatic states, ordinary days — augmented with AI-assisted reflection through a feature we call **the Lantern**. This policy describes what data we collect, how it's used, and what control you have over it.
 
@@ -15,7 +15,7 @@ Go Inward Out is a private journal for inner experiences — dreams, meditations
 - We don't read your content. Our systems and our team are designed to keep your data accessible only to you and to the AI services you direct.
 - When you tap "Cast a Reading," the relevant content is sent to Anthropic's Claude API to compose a response. Anthropic does not use your content to train future models per their Commercial Terms.
 - We use **no** analytics SDKs, **no** advertising IDs, **no** fingerprinting, **no** cross-app or cross-site tracking.
-- Sign in (Apple or email magic link) and your data is restored on any device.
+- Sign in (Apple, Google, or email magic link) and your data is restored on any device.
 - You can export your data or delete your account at any time.
 
 ## What we collect
@@ -29,7 +29,7 @@ Go Inward Out is a private journal for inner experiences — dreams, meditations
 
 ### Data we need to operate
 
-- **Account identifier** — a stable user ID issued by Supabase. When you sign in with Apple or email, the resulting identity is linked to this ID so your data restores on any device you sign in on.
+- **Account identifier** — a stable user ID issued by Supabase. When you sign in (Apple, Google, or email), the resulting identity is linked to this ID so your data restores on any device you sign in on.
 - **Session tokens** — Supabase issues short-lived JWTs for authenticated requests.
 - **Sync metadata** — record IDs, timestamps, deletion markers used to keep your devices in sync.
 - **Device identifier** — a random UUID generated locally per app install. Used only for sync envelope identification.
@@ -52,7 +52,7 @@ When you request AI assistance (cast a reading, generate synthesis, clean up a v
 
 - **Supabase** (our hosting + database provider, US-based): your records are encrypted at rest using AES-256 with keys managed by Supabase. Supabase's technical staff have administrative access to our database but contractually agree to access user data only for support tickets you've initiated. We have not configured any database extension or function that would expose your data beyond your own authenticated requests.
 - **Anthropic**: receives your prompt (the relevant entry text + context blocks) and returns a response. Bound by Anthropic's Commercial Terms — no training, 30-day retention, then deleted.
-- **Apple / email providers**: when you sign in, the provider issues a token bound to your identity. We receive the resulting auth identifier (e.g. the Apple user ID) and your email if you provided it.
+- **Sign-in providers (Apple / Google / email)**: when you sign in, the provider issues a token bound to your identity. We receive the resulting auth identifier and your email if you provided it.
 
 We do **not** share data with advertisers, analytics vendors, data brokers, or any party that profiles users for behavioral targeting.
 
@@ -90,7 +90,7 @@ Go Inward Out is not directed at users under 13. We do not knowingly collect dat
 - TLS 1.2+ for all network traffic
 - AES-256 encryption at rest (Supabase-managed)
 - Per-user Row-Level Security on every table — a leaked token from one user cannot read another user's records
-- No passwords stored. Authentication via Apple Sign-In or email magic link.
+- No passwords stored. Authentication via Apple Sign-In (iOS), Google Sign-In (iOS + Android), or email magic link.
 - Optional Face ID gate per entry (Settings → Privacy on each entry) and optional App Lock for the entire app (Settings → Security)
 - Audit log of AI transmissions visible in Settings → Privacy → Transmissions
 
