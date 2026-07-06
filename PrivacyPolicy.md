@@ -5,7 +5,7 @@ title: Privacy Policy
 
 # Privacy Policy — Go Inward Out
 
-**Last updated:** May 28, 2026
+**Last updated:** July 6, 2026
 
 Go Inward Out is a private journal for inner experiences — dreams, meditations, mystical experiences, somatic states, ordinary days — augmented with AI-assisted reflection through a feature we call **the Lantern**. This policy describes what data we collect, how it's used, and what control you have over it.
 
@@ -16,6 +16,7 @@ Go Inward Out is a private journal for inner experiences — dreams, meditations
 - When you tap "Cast a Reading," the relevant content is sent to Anthropic's Claude API to compose a response. Anthropic does not use your content to train future models per their Commercial Terms.
 - We use **no** analytics SDKs, **no** advertising IDs, **no** fingerprinting, **no** cross-app or cross-site tracking.
 - Sign in (Apple, Google, or email magic link) and your data is restored on any device.
+- **Go Out (the Weave)** — our one feature that involves another person — is optional and does nothing unless you use it. Nothing about your experiences reaches anyone else unless you deliberately connect and share, and even then they see only what you choose, never your raw entries.
 - You can export your data or delete your account at any time.
 
 ## What we collect
@@ -47,6 +48,18 @@ When you request AI assistance (cast a reading, generate synthesis, clean up a v
 - Anthropic's Commercial Terms prohibit training on your data.
 - Anthropic retains your prompt and response for up to 30 days for safety review, then deletes them.
 - You can disable AI entirely from **Settings → AI**. With AI disabled, Go Inward Out functions as a pure private journal — no requests leave the app.
+
+## Connecting with others — the Weave (Go Out)
+
+Go Inward Out includes an optional feature called **Go Out** (**the Weave**) that lets you connect with specific people you invite, so that when two connected people's inner lives echo each other — a "connected synchronicity" — you can choose to share something about it. This is the app's only feature that involves another person, and it is **entirely opt-in**. If you never use Go Out, none of the following applies — your experiences stay private to your own account, exactly as described elsewhere in this policy.
+
+- **Nothing is shared by default.** Your experiences are Private unless you deliberately make them available for connection, and even then, another person never sees the words you wrote.
+- **Opting in.** You may make an experience available to your connections — one at a time, or all at once from a settings option that spells out exactly what becomes shareable first. It is reversible: you can make any experience Private again at any time.
+- **What the server compares.** When you make an experience available, our server compares a *fingerprint* of it — the themes, people, symbols, and emotions we extract from it, its timing, and how significant you said it felt — against the experiences a connected person has also made available, to notice when two inner lives echo each other. It never compares, shares, or exposes the text you wrote. This happens only inside the service that runs the match, and only between you and people you have connected with.
+- **What a match reveals.** When a synchronicity is found, the only thing inherently revealed to the other person is that a match exists. Anything beyond that — the type of experience, how it affected you, or a narrative about it — is a separate, ascending choice you make, one level at a time. You control your side; they control theirs.
+- **Messages.** Connected people can send each other messages within a synchronicity. These are stored on our servers (encrypted at rest, not end-to-end encrypted) so we can deliver them, like any messaging feature.
+- **Narratives about a named person.** If you choose to write and share a narrative that names the other person, it is stored so we can deliver it to the person you chose. It is encrypted at rest but readable on our servers (not end-to-end encrypted). Once delivered, a copy already on the other person's device cannot be recalled.
+- **Blocking and control.** You can block a connection at any time — we stop matching you and stop serving your shared details to them going forward — and you can exclude specific people from ever matching against your experiences. As with any sharing, anything already delivered to another person's device before you blocked or made an experience Private cannot be clawed back.
 
 ## What our infrastructure sees
 
