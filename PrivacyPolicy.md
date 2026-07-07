@@ -5,7 +5,7 @@ title: Privacy Policy
 
 # Privacy Policy — Go Inward Out
 
-**Last updated:** July 6, 2026
+**Last updated:** July 7, 2026
 
 Go Inward Out is a private journal for inner experiences — dreams, meditations, mystical experiences, somatic states, ordinary days — augmented with AI-assisted reflection through a feature we call **the Lantern**. This policy describes what data we collect, how it's used, and what control you have over it.
 
@@ -16,7 +16,7 @@ Go Inward Out is a private journal for inner experiences — dreams, meditations
 - When you tap "Cast a Reading," the relevant content is sent to Anthropic's Claude API to compose a response. Anthropic does not use your content to train future models per their Commercial Terms.
 - We use **no** analytics SDKs, **no** advertising IDs, **no** fingerprinting, **no** cross-app or cross-site tracking.
 - Sign in (Apple, Google, or email magic link) and your data is restored on any device.
-- **Go Out (the Weave)** — our one feature that involves another person — is optional and does nothing unless you use it. Nothing about your experiences reaches anyone else unless you deliberately connect and share, and even then they see only what you choose, never your raw entries.
+- **Go Out (the Weave)** — our one feature that involves another person — is optional and does nothing unless you use it. Nothing about your experiences reaches anyone else unless you deliberately connect and share, and even then they see only what you choose — from nothing more than "a match happened" up to, only if you choose it, a specific experience as you recorded it.
 - You can export your data or delete your account at any time.
 
 ## What we collect
@@ -53,12 +53,13 @@ When you request AI assistance (cast a reading, generate synthesis, clean up a v
 
 Go Inward Out includes an optional feature called **Go Out** (**the Weave**) that lets you connect with specific people you invite, so that when two connected people's inner lives echo each other — a "connected synchronicity" — you can choose to share something about it. This is the app's only feature that involves another person, and it is **entirely opt-in**. If you never use Go Out, none of the following applies — your experiences stay private to your own account, exactly as described elsewhere in this policy.
 
-- **Nothing is shared by default.** Your experiences are Private unless you deliberately make them available for connection, and even then, another person never sees the words you wrote.
+- **Nothing is shared by default.** Your experiences are Private unless you deliberately make them available for connection. Making an experience available never shows anyone your words — matching uses only the fingerprint described below. The words you wrote reach another person in exactly one way: you yourself choosing the highest sharing level, for one specific synchronicity.
 - **Opting in.** You may make an experience available to your connections — one at a time, or all at once from a settings option that spells out exactly what becomes shareable first. It is reversible: you can make any experience Private again at any time.
-- **What the server compares.** When you make an experience available, our server compares a *fingerprint* of it — the themes, people, symbols, and emotions we extract from it, its timing, and how significant you said it felt — against the experiences a connected person has also made available, to notice when two inner lives echo each other. It never compares, shares, or exposes the text you wrote. This happens only inside the service that runs the match, and only between you and people you have connected with.
-- **What a match reveals.** When a synchronicity is found, the only thing inherently revealed to the other person is that a match exists. Anything beyond that — the type of experience, how it affected you, or a narrative about it — is a separate, ascending choice you make, one level at a time. You control your side; they control theirs.
+- **What the server compares.** When you make an experience available, our server compares a *fingerprint* of it — the themes, people, symbols, and emotions we extract from it, its timing, and how significant you said it felt — against the experiences a connected person has also made available, to notice when two inner lives echo each other. The matching process never reads, compares, or exposes the text you wrote. This happens only inside the service that runs the match, and only between you and people you have connected with.
+- **What a match reveals.** When a synchronicity is found, the only thing inherently revealed to the other person is that a match exists. Everything beyond that is a separate, ascending choice you make for that one synchronicity, one level at a time, drawn from your record itself: first the experience's type, then how it landed for you (your significance rating and tagged emotions), and finally — never automatically — the experience as you recorded it: its title, your words, its date and details. What you share is a copy frozen at the moment you share it; later edits to your record are never sent unless you share again. Your voice recordings, drawings, and the app's AI readings never leave your account, at any level. Lowering a level stops future sharing, though what the other person already received can't be un-seen. You control your side; they control theirs.
 - **Messages.** Connected people can send each other messages within a synchronicity. These are stored on our servers (encrypted at rest, not end-to-end encrypted) so we can deliver them, like any messaging feature.
-- **Narratives about a named person.** If you choose to write and share a narrative that names the other person, it is stored so we can deliver it to the person you chose. It is encrypted at rest but readable on our servers (not end-to-end encrypted). Once delivered, a copy already on the other person's device cannot be recalled.
+- **Notifications.** If you allow notifications, we alert you when a synchronicity forms or a reply arrives. These alerts are deliberately content-free — a fixed phrase like "a connected synchronicity appeared," never a name, a type, or a message preview — because push notifications transit Apple's and Google's delivery systems and appear on lock screens. Delivery uses Expo's notification service, which holds only a routing token for your device; what was actually shared is fetched inside the app after you tap.
+- **Sharing that names a person.** An experience you share at the highest level (or a written note shared with an older version of the app) may name the other person. It is stored so we can deliver it to the person you chose — encrypted at rest but readable on our servers (not end-to-end encrypted). Once delivered, a copy already on the other person's device cannot be recalled.
 - **Blocking and control.** You can block a connection at any time — we stop matching you and stop serving your shared details to them going forward — and you can exclude specific people from ever matching against your experiences. As with any sharing, anything already delivered to another person's device before you blocked or made an experience Private cannot be clawed back.
 
 ## What our infrastructure sees
@@ -66,6 +67,7 @@ Go Inward Out includes an optional feature called **Go Out** (**the Weave**) tha
 - **Supabase** (our hosting + database provider, US-based): your records are encrypted at rest using AES-256 with keys managed by Supabase. Supabase's technical staff have administrative access to our database but contractually agree to access user data only for support tickets you've initiated. We have not configured any database extension or function that would expose your data beyond your own authenticated requests.
 - **Anthropic**: receives your prompt (the relevant entry text + context blocks) and returns a response. Bound by Anthropic's Commercial Terms — no training, 30-day retention, then deleted.
 - **Sign-in providers (Apple / Google / email)**: when you sign in, the provider issues a token bound to your identity. We receive the resulting auth identifier and your email if you provided it.
+- **Expo** (notification delivery): relays our content-free notification payloads to Apple's and Google's push services and stores the device routing token needed to reach your phone. It never receives your entries, your words, or anything you shared.
 
 We do **not** share data with advertisers, analytics vendors, data brokers, or any party that profiles users for behavioral targeting.
 
