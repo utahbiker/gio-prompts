@@ -1,0 +1,50 @@
+<!doctype html>
+<html lang="en">
+<head>
+<meta charset="utf-8">
+<meta name="viewport" content="width=device-width, initial-scale=1">
+<title>Go Inward Out — Weave invitation</title>
+<style>
+  :root { color-scheme: dark; }
+  body { font-family: -apple-system, BlinkMacSystemFont, "Segoe UI", Helvetica, Arial, sans-serif;
+         background:#070B14; color:#E9E4D6; max-width:560px; margin:0 auto; padding:48px 24px;
+         line-height:1.6; text-align:center; }
+  h1 { font-weight:400; font-size:26px; letter-spacing:.5px; }
+  p  { color:#A8A290; font-size:16px; }
+  .btn { display:inline-block; margin:28px 0 10px; padding:16px 34px; border-radius:999px;
+         background:#B8A96A; color:#0a0e18; font-weight:600; text-decoration:none;
+         font-size:17px; letter-spacing:.5px; }
+  .alt { font-size:14px; color:#6E6A5C; margin-top:34px; }
+  .ring { font-size:44px; color:#B8A96A; margin-bottom:6px; }
+  code { background:#101826; border:1px solid #1F2735; border-radius:8px; padding:2px 8px; color:#D4C284; }
+</style>
+</head>
+<body>
+<div class="ring">⟲</div>
+<h1>Someone invited you to weave</h1>
+<p>Go Inward Out notices when two connected people's inner lives echo each other — and lets you both choose what, if anything, to share about it.</p>
+<a id="open" class="btn" href="#">Open in Go Inward Out</a>
+<p id="hint">If nothing happens, the app isn't installed yet.</p>
+<p class="alt">
+  <strong>Don't have the app?</strong> Go Inward Out is currently in invite-only testing —
+  ask the person who sent this for an install link. Once you're in:
+  open the <strong>Go&nbsp;Out</strong> tab and enter the <code>WEAVE-</code> code from their message.
+</p>
+<script>
+  // The invite token rides the URL FRAGMENT (#t=…) — it never leaves this
+  // page: fragments aren't sent to servers, and the button below hands it
+  // straight to the app via a custom-scheme URL (no network hop at all).
+  (function () {
+    var m = /(?:^|[#&])t=([^&]+)/.exec(location.hash || '');
+    var btn = document.getElementById('open');
+    if (m && m[1]) {
+      btn.href = 'goinwardout://weave-accept?t=' + encodeURIComponent(m[1]);
+    } else {
+      btn.style.display = 'none';
+      document.getElementById('hint').textContent =
+        'This invitation link is incomplete — ask your friend to send it again, or just use their WEAVE- code in the app.';
+    }
+  })();
+</script>
+</body>
+</html>
