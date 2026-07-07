@@ -5,7 +5,7 @@ title: Terms of Service
 
 # Terms of Service — Go Inward Out
 
-**Last updated:** May 12, 2026
+**Last updated:** July 8, 2026
 
 These terms govern your use of Go Inward Out (the "app"). By using the app you agree to them. If you do not agree, do not use the app.
 
@@ -15,6 +15,7 @@ The short version, in plain language:
 - **The app is not therapy.** It does not diagnose, treat, or replace any mental-health care.
 - AI-generated content is a starting point for reflection, not a verdict. You are the authority on your own inner life.
 - You own what you write. We don't claim rights over your content.
+- Go Out — connecting with others — is optional. Abuse of another person through it costs you the account. No warnings for the serious stuff.
 - Use is provided as-is, with no warranty.
 - Daily limits apply to AI features to keep costs sustainable.
 
@@ -48,11 +49,24 @@ When you request a reading, synthesis, or other AI-assisted output:
 
 - Captured content is your own. Do not capture content that belongs to someone else without their consent.
 - Do not use the app to threaten, defame, or harass another person.
+- Only invite people you actually know to Go Out, and share content that names another person with care and, where appropriate, their consent.
 - Do not attempt to bypass the daily AI limits, reverse-engineer the encryption, or interfere with the service for other users.
 
 ---
 
-## 4. AI usage limits
+## 4. Connecting with others (Go Out — the Weave)
+
+Go Out is the app's only feature that involves another person, and it is entirely optional. When you use it, you may share parts of your experiences — up to and including an experience as you recorded it — and exchange messages with people you have deliberately connected with.
+
+**Because other people receive what you share, there is zero tolerance for objectionable content or abusive behavior.** This includes harassment, threats, hate, sexual content directed at another person without their clear consent, any sexualization of minors, impersonation, and using the Weave to monitor, pressure, or intimidate someone. There is no warning system for this category: violations can result in removal of shared content, blocked connections, and immediate, permanent loss of your account.
+
+**Moderation.** Every synchronicity and connection has a Report action. A person — not an automated system — reviews every report, and we act on legitimate reports within 3 business days, including removing content and ejecting the user who provided it. Blocking someone stops all matching and sharing with them immediately.
+
+**What you share is delivered.** A message or shared experience that has reached another person's device cannot be recalled. If what you share names another person, you are responsible for sharing it with care.
+
+---
+
+## 5. AI usage limits
 
 To keep the service sustainable for all users, AI features are rate-limited:
 
@@ -63,33 +77,33 @@ Limits reset at 00:00 UTC each day. If you hit a limit, the Lantern will simply 
 
 ---
 
-## 5. Subscription and pricing
+## 6. Subscription and pricing
 
-Go Inward Out's V2 launch is free. Future versions may introduce a paid tier for additional features (e.g., the "Out" community surfaces). When that happens, the core single-user app remains usable; new terms will be presented before any charge.
+Go Inward Out's V2 launch is free. Future versions may introduce a paid tier for additional features. When that happens, the core single-user app remains usable; new terms will be presented before any charge.
 
 ---
 
-## 6. Your data
+## 7. Your data
 
 See the [Privacy Policy](./PrivacyPolicy.html) for details. The headline:
 
 - You own your content.
-- It is end-to-end encrypted before leaving your device.
-- You can export or delete it at any time.
+- It is encrypted in transit and at rest. Your journal is private to your account by default; matching in Go Out compares only extracted fingerprints, never your words. Content you *deliberately share* through Go Out is stored so we can deliver it to the person you chose — readable by our servers, not end-to-end encrypted. The Privacy Policy is the full, honest model.
+- You can export or delete your data at any time.
 
-We grant ourselves no rights over your content beyond the technical operations needed to store and sync it on your behalf.
-
----
-
-## 7. Account suspension and termination
-
-- You may delete your account at any time from Settings. Deletion is irreversible (a 30-day soft-delete window precedes hard deletion).
-- We may suspend or terminate accounts that violate these terms (Section 3) — typically only after a warning, and only for clear violations involving harm to others.
-- If we terminate your account, you have 30 days to export your data via the in-app export flow.
+We grant ourselves no rights over your content beyond the technical operations needed to store, sync, and — where you deliberately share — deliver it on your behalf.
 
 ---
 
-## 8. Service availability
+## 8. Account suspension and termination
+
+- You may delete your account at any time from Settings → Account. Deletion is irreversible (a 30-day window precedes final purge).
+- We may suspend or terminate accounts that violate these terms. For most violations we warn first where that is reasonable; **violations involving harm to another person (Section 4) can result in immediate, permanent termination without warning.**
+- If we terminate your account for reasons other than harm to others, you have 30 days to export your data via the in-app export flow.
+
+---
+
+## 9. Service availability
 
 - The app is provided "as is" and "as available."
 - We aim for high uptime but do not guarantee uninterrupted service.
@@ -98,7 +112,7 @@ We grant ourselves no rights over your content beyond the technical operations n
 
 ---
 
-## 9. Disclaimers and liability
+## 10. Disclaimers and liability
 
 - **No warranty.** The app is provided without warranty of any kind, express or implied, including merchantability, fitness for a particular purpose, and non-infringement.
 - **No liability for indirect damages.** To the maximum extent permitted by applicable law, we are not liable for any indirect, incidental, special, consequential, or punitive damages arising from your use of the app.
@@ -108,19 +122,19 @@ If your jurisdiction does not allow the disclaimer or limitation of certain dama
 
 ---
 
-## 10. Changes to these terms
+## 11. Changes to these terms
 
 If we change these terms materially, we'll surface a notice in the app on next launch. The "Last updated" date will change accordingly. Continued use after the notice constitutes acceptance.
 
 ---
 
-## 11. Governing law
+## 12. Governing law
 
 These terms are governed by the laws of the State of Utah, United States, without regard to its conflict-of-law rules. Any dispute arising out of or related to the app shall be resolved in the state or federal courts located in Salt Lake County, Utah.
 
 ---
 
-## 12. Contact
+## 13. Contact
 
 Email: **goinwardout@gmail.com** (subject line "Terms")
 
