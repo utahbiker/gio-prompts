@@ -5,7 +5,7 @@ title: Privacy Policy
 
 # Privacy Policy — Go Inward Out
 
-**Last updated:** July 7, 2026
+**Last updated:** July 8, 2026
 
 Go Inward Out is a private journal for inner experiences — dreams, meditations, mystical experiences, somatic states, ordinary days — augmented with AI-assisted reflection through a feature we call **the Lantern**. This policy describes what data we collect, how it's used, and what control you have over it.
 
@@ -27,6 +27,7 @@ Go Inward Out is a private journal for inner experiences — dreams, meditations
 - **Reflections** and your replies to the Lantern's readings.
 - **Profile info** — optional display name, optional birth data, preferences.
 - **Audio recordings** — when you capture by voice; transcripts are derived from these on your device.
+- **Photos (optional)** — images you choose to attach to an experience, taken with the camera or picked from your library. They sync with your account like your entries, are never shared with anyone through Go Out at any level, and are never sent to AI services.
 
 ### Data we need to operate
 
