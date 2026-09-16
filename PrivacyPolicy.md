@@ -5,7 +5,7 @@ title: Privacy Policy
 
 # Privacy Policy — Go Inward Out
 
-**Last updated:** July 8, 2026
+**Last updated:** September 15, 2026
 
 Go Inward Out is a private journal for inner experiences — dreams, meditations, mystical experiences, somatic states, ordinary days — augmented with AI-assisted reflection through a feature we call **the Lantern**. This policy describes what data we collect, how it's used, and what control you have over it.
 
@@ -28,6 +28,8 @@ Go Inward Out is a private journal for inner experiences — dreams, meditations
 - **Profile info** — optional display name, optional birth data, preferences.
 - **Audio recordings** — when you capture by voice; transcripts are derived from these on your device.
 - **Photos (optional)** — images you choose to attach to an experience, taken with the camera or picked from your library. They sync with your account like your entries, are never shared with anyone through Go Out at any level, and are never sent to AI services.
+- **Overnight sleep audio (optional)** — if you turn on sleep recording, audio is captured through the night and **stays on this device only**. See "Overnight sleep recording" below.
+- **Synchronicity Engine (optional)** — the question you write for it, and its record: which seed arrived on which day, the minute it arrived, when you first opened it, your mark, and any note you kept. Your question is stored under your account and is never sent to AI services; only a hash of it takes part in a draw.
 
 ### Data we need to operate
 
@@ -40,7 +42,7 @@ Go Inward Out is a private journal for inner experiences — dreams, meditations
 
 - Advertising identifiers (IDFA, GAID, etc.)
 - Location, contacts, calendar, health data, browsing history, search history outside the app
-- Microphone access only when you press to record. Camera and photo library are not currently used by the app.
+- Microphone access only when you start a recording yourself — a voice capture, or an overnight sleep session you explicitly begin. Camera and photo library access only when you tap to attach a photo to an experience; the app never scans or reads your library beyond the photos you pick.
 
 ## How AI works
 
@@ -49,6 +51,15 @@ When you request AI assistance (cast a reading, generate synthesis, clean up a v
 - Anthropic's Commercial Terms prohibit training on your data.
 - Anthropic retains your prompt and response for up to 30 days for safety review, then deletes them.
 - You can disable AI entirely from **Settings → AI**. With AI disabled, Go Inward Out functions as a pure private journal — no requests leave the app.
+
+## Overnight sleep recording (optional)
+
+The sleep suite can record audio while you sleep to catch sleep-talking and other vocalizations. It is **off by default**, and every session is started by you, explicitly, each night.
+
+- The full-night recording is stored **only on this device**. It is never uploaded, never synced, and never sent to any AI service.
+- In the morning, the app scans the recording **on-device** and surfaces short moments of sound for you to review.
+- Entries you journal from those moments are ordinary text entries (they sync, and the Lantern can read them if AI is enabled). The audio itself is never attached to them and never leaves the device.
+- The raw night recording is deleted automatically after the retention window you choose (24 hours, 48 hours, or 7 days), and you can delete all sleep recordings at any time with one tap.
 
 ## Connecting with others — the Weave (Go Out)
 
@@ -67,8 +78,9 @@ Go Inward Out includes an optional feature called **Go Out** (**the Weave**) tha
 
 - **Supabase** (our hosting + database provider, US-based): your records are encrypted at rest using AES-256 with keys managed by Supabase. Supabase's technical staff have administrative access to our database but contractually agree to access user data only for support tickets you've initiated. We have not configured any database extension or function that would expose your data beyond your own authenticated requests.
 - **Anthropic**: receives your prompt (the relevant entry text + context blocks) and returns a response. Bound by Anthropic's Commercial Terms — no training, 30-day retention, then deleted.
-- **Sign-in providers (Apple / Google / email)**: when you sign in, the provider issues a token bound to your identity. We receive the resulting auth identifier and your email if you provided it.
+- **Sign-in providers (Apple / Google / email)**: when you sign in, the provider issues a token bound to your identity. We receive the resulting auth identifier (e.g. the Apple user ID) and your email if you provided it.
 - **Expo** (notification delivery): relays our content-free notification payloads to Apple's and Google's push services and stores the device routing token needed to reach your phone. It never receives your entries, your words, or anything you shared.
+- **NIST Randomness Beacon** (Synchronicity Engine): our server fetches the Beacon's public random pulse for a given minute. The request carries only that minute; NIST receives nothing about you or your question, and the app never contacts NIST from your phone (tapping a pulse link under a seed opens NIST's public page in your browser, as any link would).
 
 We do **not** share data with advertisers, analytics vendors, data brokers, or any party that profiles users for behavioral targeting.
 
@@ -107,7 +119,7 @@ Go Inward Out is not directed at users under 13. We do not knowingly collect dat
 - AES-256 encryption at rest (Supabase-managed)
 - Per-user Row-Level Security on every table — a leaked token from one user cannot read another user's records
 - No passwords stored. Authentication via Apple Sign-In (iOS), Google Sign-In (iOS + Android), or email magic link.
-- Optional Face ID gate per entry (Settings → Privacy on each entry) and optional App Lock for the entire app (Settings → Security)
+- Optional biometric gate per entry (Settings → Privacy on each entry) and optional App Lock for the entire app (Settings → Security)
 - Audit log of AI transmissions visible in Settings → Privacy → Transmissions
 
 ## What this policy doesn't promise
